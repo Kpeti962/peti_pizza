@@ -1,0 +1,14 @@
+@import "./nav.scss";
+
+@import "./mainPage.scss";
+
+.App{
+    margin: 0px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(240, 240, 240)
+}

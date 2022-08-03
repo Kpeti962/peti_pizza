@@ -1,0 +1,20 @@
+
+    .imgWrapper{
+        position: relative;
+        img{
+            
+            width:100%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.6;
+        }
+    } 
+.descriptionWrapper{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   text-align: center;
+}
+
