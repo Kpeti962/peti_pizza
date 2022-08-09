@@ -1,7 +1,10 @@
 .pizzaPageWrapper {
     text-align: center;
-   
-
+ }
+.pizzaCard{
+    position: relative;
+    
+    
 }
 .imgPricesSizesWrapper {
     background: gray;
@@ -43,34 +46,50 @@ li {
 }
 }
 .sizePriceButtonWrapper {
-    position: relative;
   width: 250px;
   display: block;
   justify-content: space-around;
   align-items: center;
-  .btn {
-    text-align: center;
-    position: absolute;
-    top: 91.8%;
-    left: 78%;
+  .sizeAndPriceWrapper{
+      position: absolute;
+      top: 20%;
+      left: 68%;
 
   }
+  .btn {
+      text-align: center;
+      position: absolute;
+      top: 91.7%;
+    left: 88.9%;
+    
+}
 }
 
 
 @media screen and (max-width: 1244px) {
-   .imgPricesSizesWrapper{
+    .imgPricesSizesWrapper{
     flex-direction: column;
     justify-content: center;
-   background: none;
-   }
-   .sizePriceButtonWrapper{
+    background: none;
+}
+.sizePriceButtonWrapper{
     display: flex;
-    position: absolute;
-    top:100%
-   }
+    .sizeAndPriceWrapper{
+        position: absolute;
+        top: 100%;
+        left: 10%;
+    
+    }
+    .btn{
+        top: 104%;
+        left: 70%;
+    }
+}
    .pizzaCard{
-    padding-top: 50px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    background: gray;
+    border-radius: 20px;
    }
 
   }

@@ -6,8 +6,8 @@ const Nav = () => {
    
 
   const navElements = [
-    { name: "Főoldal", src: "MainPage.js" },
-    { name: "Pizzáink", src: "PizzaPage.js" },
+    { name: "Főoldal", src: "" },
+    { name: "Pizzáink", src: "" },
     { name: "Hamburgereink", src: "" },
     { name: "Rólunk", src: "" },
   ];
@@ -17,7 +17,7 @@ const Nav = () => {
       <div className="navElementsWrapper">
         <ul>
           {navElements.map((element, index) => (
-              <li key={index} Link={element.src}>  
+              <li key={index}>  
                 {element.name}
                 </li>
           ))}
