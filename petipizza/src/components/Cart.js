@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useEffect, useBetween } from "react";
+import pizzas from "../datas/pizzas";
+
+const Cart = (
+
+) => {
 
 
-const Cart = () => {
-
-    return (
-        <div className="cart">
-              
-        </div>
-    )
+  return (
+<></>
+  );
 };
-
-
 
 export default Cart;

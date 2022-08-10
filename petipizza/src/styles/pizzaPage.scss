@@ -46,23 +46,35 @@ li {
 }
 }
 .sizePriceButtonWrapper {
-  width: 250px;
-  display: block;
-  justify-content: space-around;
+    width: 250px;
+    display: block;
+    justify-content: space-around;
   align-items: center;
   .sizeAndPriceWrapper{
       position: absolute;
       top: 20%;
-      left: 68%;
+      left: 58%;
+    button{
+        width:55%
+    }
+      
+    }
+
+}
+.cartItems{
+  display: flex;
+  justify-content: space-between;
+  transition: all ease-in-out 0.5s;
+  border-radius: 20px;
+  button{
+      cursor: pointer;
+      border-radius: 20px;
+      border: 1px solid gray;
+  }
+  &:hover{
+      background: rgb(192, 192, 192);
 
   }
-  .btn {
-      text-align: center;
-      position: absolute;
-      top: 91.7%;
-    left: 88.9%;
-    
-}
 }
 
 
