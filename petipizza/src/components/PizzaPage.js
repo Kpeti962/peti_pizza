@@ -6,37 +6,41 @@ import { v4 as uuidv4 } from "uuid";
 
 //Amit kérdezni: Link, Routes; Cart komponensbe a local storaget átimportálni; id átadása a deletehandler-nél
 
-
-
-
 const PizzaPage = () => {
   const { pizzaElements } = pizzas;
 
   const [cart, setCart] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
-useEffect(()=> {
+  /* useEffect(()=> {
   if(localStorage.getItem("localCart")){
     const storedCart = JSON.parse(localStorage.getItem("localCart"));
     setCartItems(storedCart);
   }
-  },[])
+  },[]); */
+
+  useEffect(() => {
+    localStorage.setItem("localCart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (e) => {
     e.preventDefault();
+
     const newItem = `${e.target.name} ${e.target.title}  cm (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
-    setCartItems([...cartItems, newItem]);
-    localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]))
-    
+    setCartItems([
+      ...cartItems,
+      { itemName: newItem, id: uuidv4(), price: e.target.value },
+    ]);
+    localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]));
   };
-  const resetHandler = () => {
+  /*   const resetHandler = () => {
     setCart(0);
     setCartItems([]);
      localStorage.removeItem("localCart"); 
-  };
-  
-  const deleteHandler = (clickedItemId) => {
+  }; */
+
+  /* const deleteHandler = (clickedItemId) => {
    
     const filteredArray = cartItems.filter((item) => item.id !== clickedItemId); 
     
@@ -45,21 +49,17 @@ useEffect(()=> {
      setCartItems(filteredArray);
     console.log(filteredArray);
     console.log(clickedItemId); 
+  }; */
+
+  const sumPrice = () => {
+    let sumResult = 0;
+    cartItems.forEach((item) => (sumResult += Number(item.price)));
+    return sumResult;
   };
-
-/*  
- useEffect(()=> {
-    localStorage.setItem("product", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  const savedItem = localStorage.getItem("product");
-  const parsedItem = JSON.parse(savedItem);
- */
   return (
- <>
+    <>
       <div className="pizzaPageWrapper">
         <h1>Pizzáink</h1>
-        
 
         {pizzaElements.map((pizza, index) => (
           <div className="pizzaCard">
@@ -79,9 +79,9 @@ useEffect(()=> {
                         size={pizza.size28}
                         value={pizza.price28}
                         name={pizza.name}
-                        title = {28}
+                        title={28}
                         id={uuidv4()}
-                        >
+                      >
                         Kosárba
                       </button>
                       {<li>{`${pizza.price28} Ft`}</li>}
@@ -92,9 +92,9 @@ useEffect(()=> {
                         size={pizza.size32}
                         value={pizza.price32}
                         name={pizza.name}
-                        title = {32}
+                        title={32}
                         id={uuidv4()}
-                        >
+                      >
                         Kosárba
                       </button>
                       {<li>{`${pizza.price32} Ft`}</li>}
@@ -105,35 +105,29 @@ useEffect(()=> {
             </div>
           </div>
         ))}
-        <h3>{`${cart} Ft`}</h3>
+        <h3>{`${sumPrice()} Ft`}</h3>
 
-        <ul className="cartItemsList">
-          {cartItems.map((item) => {
+       {/*  <ul className="cartItemsList">
+   {cartItems.map((item) => {
             const {
-              name,
-              img,
-              price28,
-              price32,
-              size28,
-              size32,
-              id,
-              isChecked,
+        itemName, id
             } = item;
             return (
               <div className="cartItems">
-                <li>{item}</li>
+                <li>{itemName}</li>
                 <button onClick={() => deleteHandler(id)}>Törlés</button>
               </div>
             );
-          })}
-        </ul>
+          })} 
+        </ul> */}
       </div>
-       <div className="price">
-        <button onClick={resetHandler}>Nulláz</button>
+      <div className="price">
+        {/*         <button onClick={resetHandler}>Nulláz</button>
+         */}
         <h2>Kosár:</h2>
-    
-      </div> 
-        </>
+      </div>
+      <Cart cartItems={cartItems} setCartItems={setCartItems} />
+    </>
   );
 };
 
