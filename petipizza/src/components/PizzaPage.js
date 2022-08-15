@@ -1,8 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/pizzaPage.scss";
 import pizzas from "../datas/pizzas";
 import Cart from "./Cart";
 import { v4 as uuidv4 } from "uuid";
+
+//Amit kérdezni: Link, Routes; Cart komponensbe a local storaget átimportálni; id átadása a deletehandler-nél
+
+
+
 
 const PizzaPage = () => {
   const { pizzaElements } = pizzas;
@@ -10,32 +15,51 @@ const PizzaPage = () => {
   const [cart, setCart] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
-
-
-
+useEffect(()=> {
+  if(localStorage.getItem("localCart")){
+    const storedCart = JSON.parse(localStorage.getItem("localCart"));
+    setCartItems(storedCart);
+  }
+  },[])
 
   const addToCart = (e) => {
-    const newItem = `${e.target.name} ${e.target.id} cm (${e.target.value} Ft)`;
+    e.preventDefault();
+    const newItem = `${e.target.name} ${e.target.title}  cm (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
     setCartItems([...cartItems, newItem]);
+    localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]))
+    
   };
   const resetHandler = () => {
     setCart(0);
     setCartItems([]);
+     localStorage.removeItem("localCart"); 
   };
-
+  
   const deleteHandler = (clickedItemId) => {
-    console.log(clickedItemId);
-    const filteredArray = cartItems.filter((item) => item.id !== clickedItemId);
+   
+    const filteredArray = cartItems.filter((item) => item.id !== clickedItemId); 
+    
+    setCart(0);
+    setCartItems([]);
+     setCartItems(filteredArray);
     console.log(filteredArray);
-    setCartItems(filteredArray)
+    console.log(clickedItemId); 
   };
 
+/*  
+ useEffect(()=> {
+    localStorage.setItem("product", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const savedItem = localStorage.getItem("product");
+  const parsedItem = JSON.parse(savedItem);
+ */
   return (
-    <>
+ <>
       <div className="pizzaPageWrapper">
         <h1>Pizzáink</h1>
-        <Cart />
+        
 
         {pizzaElements.map((pizza, index) => (
           <div className="pizzaCard">
@@ -55,8 +79,9 @@ const PizzaPage = () => {
                         size={pizza.size28}
                         value={pizza.price28}
                         name={pizza.name}
-                        id="28"
-                      >
+                        title = {28}
+                        id={uuidv4()}
+                        >
                         Kosárba
                       </button>
                       {<li>{`${pizza.price28} Ft`}</li>}
@@ -67,8 +92,9 @@ const PizzaPage = () => {
                         size={pizza.size32}
                         value={pizza.price32}
                         name={pizza.name}
-                        id="32"
-                      >
+                        title = {32}
+                        id={uuidv4()}
+                        >
                         Kosárba
                       </button>
                       {<li>{`${pizza.price32} Ft`}</li>}
@@ -81,7 +107,7 @@ const PizzaPage = () => {
         ))}
         <h3>{`${cart} Ft`}</h3>
 
-        <ul>
+        <ul className="cartItemsList">
           {cartItems.map((item) => {
             const {
               name,
@@ -93,7 +119,7 @@ const PizzaPage = () => {
               id,
               isChecked,
             } = item;
-            return (   
+            return (
               <div className="cartItems">
                 <li>{item}</li>
                 <button onClick={() => deleteHandler(id)}>Törlés</button>
@@ -102,10 +128,12 @@ const PizzaPage = () => {
           })}
         </ul>
       </div>
-      <div className="price">
+       <div className="price">
         <button onClick={resetHandler}>Nulláz</button>
-      </div>
-    </>
+        <h2>Kosár:</h2>
+    
+      </div> 
+        </>
   );
 };
 

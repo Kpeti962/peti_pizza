@@ -61,15 +61,26 @@ li {
     }
 
 }
+.cartItemsList{
+    overflow: auto;
+height: 226.8px;
+}
 .cartItems{
   display: flex;
   justify-content: space-between;
   transition: all ease-in-out 0.5s;
-  border-radius: 20px;
+  border-radius: 5px;
+  list-style-type: none;
+  font-weight: 800;
+  border: 1px solid black;
+  padding: 5px 10px;
+  align-items: center;
   button{
       cursor: pointer;
       border-radius: 20px;
-      border: 1px solid gray;
+    border: none;
+    height: 30px
+    
   }
   &:hover{
       background: rgb(192, 192, 192);

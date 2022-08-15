@@ -1,13 +1,16 @@
-import React, { useEffect, useBetween } from "react";
+import React, { useEffect, useState } from "react";
 import pizzas from "../datas/pizzas";
 
-const Cart = (
+const Cart = () => {
 
-) => {
 
 
   return (
-<></>
+<>
+<ul>
+  <li>{}</li>
+</ul>
+</>
   );
 };
 
