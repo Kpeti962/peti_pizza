@@ -3,7 +3,8 @@ import "../styles/pizzaPage.scss";
 import pizzas from "../datas/pizzas";
 import Cart from "./Cart";
 import { v4 as uuidv4 } from "uuid";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCartShopping} from "@fortawesome/free-solid-svg-icons"; 
 //Amit kérdezni: Link, Routes; Cart komponensbe a local storaget átimportálni; id átadása a deletehandler-nél
 
 const PizzaPage = () => {
@@ -34,22 +35,7 @@ const PizzaPage = () => {
     ]);
     localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]));
   };
-  /*   const resetHandler = () => {
-    setCart(0);
-    setCartItems([]);
-     localStorage.removeItem("localCart"); 
-  }; */
 
-  /* const deleteHandler = (clickedItemId) => {
-   
-    const filteredArray = cartItems.filter((item) => item.id !== clickedItemId); 
-    
-    setCart(0);
-    setCartItems([]);
-     setCartItems(filteredArray);
-    console.log(filteredArray);
-    console.log(clickedItemId); 
-  }; */
 
   const sumPrice = () => {
     let sumResult = 0;
@@ -82,7 +68,7 @@ const PizzaPage = () => {
                         title={28}
                         id={uuidv4()}
                       >
-                        Kosárba
+                       Kosárba
                       </button>
                       {<li>{`${pizza.price28} Ft`}</li>}
                     </div>
@@ -107,24 +93,11 @@ const PizzaPage = () => {
         ))}
         <h3>{`${sumPrice()} Ft`}</h3>
 
-       {/*  <ul className="cartItemsList">
-   {cartItems.map((item) => {
-            const {
-        itemName, id
-            } = item;
-            return (
-              <div className="cartItems">
-                <li>{itemName}</li>
-                <button onClick={() => deleteHandler(id)}>Törlés</button>
-              </div>
-            );
-          })} 
-        </ul> */}
+     
       </div>
       <div className="price">
-        {/*         <button onClick={resetHandler}>Nulláz</button>
-         */}
-        <h2>Kosár:</h2>
+
+       
       </div>
       <Cart cartItems={cartItems} setCartItems={setCartItems} />
     </>
