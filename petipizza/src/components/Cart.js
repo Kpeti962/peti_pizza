@@ -36,6 +36,8 @@ const Cart = ({ cartItems, setCartItems }) => {
     cartItems.forEach((item) => (sumResult += Number(item.price)));
     if(sumResult === 0){
       return "A kosár üres"
+    }else if(sumResult > 20000){
+      return "Azért állj már le. Így is annyira dagadt vagy, hogy sapkában kellene érkezzél egy disznóvágásra, hogy ne téged vágjanak le. "
     } else {
       return `Összesen + Szállítási díj(300 Ft): ${sumResult + 300} Ft`;
     }
