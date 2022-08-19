@@ -48,7 +48,7 @@ const PizzaPage = () => {
         <h1>Pizzáink</h1>
 
         {pizzaElements.map((pizza, index) => (
-          <div className="pizzaCard">
+          <div key={index}  className="pizzaCard">
             <h4>{pizza.name}</h4>
             <div className="imgPricesSizesWrapper">
               <img key={index} src={pizza.img} alt="margherita" />
