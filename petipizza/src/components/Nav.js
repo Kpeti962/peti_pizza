@@ -1,32 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-/* import { useLocation } from "react-router-dom"; */
-
 
 const Nav = () => {
-/*   const {pathname} = useLocation() */
-   
-
   const navElements = [
-    { name: "Főoldal", src: "" , pageName: "mainpage"},
+    { name: "Főoldal", src: "1", pageName: "mainpage" },
     { name: "Pizzáink", src: "2", pageName: "pizzapage" },
     { name: "Hamburgereink", src: "3", pageName: "hamburgerpage" },
-    { name: "Rólunk", src: "4", pageName: "aboutus" },
   ];
 
   return (
-  
-      <div className="navElementsWrapper">
-        <ul>
-          {navElements.map((element, index) => (
-              <li key={index}>  
-                {element.name}
-                </li>
-          ))}
-        </ul>
-        <h1>Petipizza</h1>
-      </div>
-   
+    <>
+    <div className="navElementsWrapper">
+      <ul>
+        {navElements.map((element, index) => (
+          <li key={index}>
+            <Link to={`/${element.pageName}`}>{element.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="title">
+      <h1>Petipizza</h1>
+    </div>
+        </>
   );
 };
 

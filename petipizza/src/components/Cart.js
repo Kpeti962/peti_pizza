@@ -54,10 +54,10 @@ const Cart = ({ cartItems, setCartItems }) => {
           <ul>
             {cartItems !== undefined &&
               cartItems.length > 0 &&
-              cartItems.map((item) => {
+              cartItems.map((item, index) => {
                 return (
                   <div className="cartItems">
-                    <li>{item.itemName}</li>
+                    <li key={index}>{item.itemName}</li>
                     <button onClick={() => deleteHandler(item.id)}>
                       Törlés
                     </button>

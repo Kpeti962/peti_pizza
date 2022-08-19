@@ -8,19 +8,19 @@ import AboutUs from "./components/AboutUs";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
 
+ 
 
   return (
     <div className="App">
       <Nav />
-   
-      
-          <MainPage />
-          <PizzaPage />
-          <HamburgerPage />
-          <AboutUs />
-        
-     
+      <Routes location={location} key={location.pathname}>
+        <Route path="mainpage" element={<MainPage />} />
+        <Route path="/pizzapage" element={<PizzaPage />} />
+        <Route path="/hamburgerpage" element={<HamburgerPage />} />
+      </Routes>
+        <AboutUs />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import"../styles/aboutUs.scss"
 
 const AboutUs = () => {
   return (
-    <>
+   
     <div className="aboutUsWrapper">
       <div className="contactsection">
       <h4>Kapcsolat:</h4>
@@ -20,7 +20,7 @@ const AboutUs = () => {
         <h4>H-V: 11:00-23:00</h4>
       </div>
     </div>
-    </>
+  
   );
 };
 

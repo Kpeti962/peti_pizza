@@ -6,7 +6,7 @@ const HamburgerPage = () => {
 
 
     return (
-<h1></h1>
+<h1>Fejlesztés alatt</h1>
     )
 };
 
