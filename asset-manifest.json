@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/peti_pizza/static/css/main.8f716080.css",
-    "main.js": "/peti_pizza/static/js/main.39fa0f53.js",
+    "main.css": "/peti_pizza/static/css/main.b2ea3729.css",
+    "main.js": "/peti_pizza/static/js/main.71e547d1.js",
     "static/js/787.d2308dac.chunk.js": "/peti_pizza/static/js/787.d2308dac.chunk.js",
     "static/media/ham.png": "/peti_pizza/static/media/ham.d24459fcb557d2d9ab68.png",
     "static/media/margherita.png": "/peti_pizza/static/media/margherita.799633a990776e620aed.png",
+    "static/media/juicylucy.png": "/peti_pizza/static/media/juicylucy.59c2e365e628a6009daa.png",
+    "static/media/cheese.png": "/peti_pizza/static/media/cheese.8cd04c85d7ab33b7f31c.png",
+    "static/media/bacon.png": "/peti_pizza/static/media/bacon.9a160b8f45cae8fb91ce.png",
     "static/media/terrace.png": "/peti_pizza/static/media/terrace.03f24668dbaede3b22a0.png",
     "static/media/funghi.png": "/peti_pizza/static/media/funghi.ba7b515dc697ec8c1e59.png",
+    "static/media/chicken.png": "/peti_pizza/static/media/chicken.b0ab0fcf4422faecee1b.png",
     "static/media/kukorica.png": "/peti_pizza/static/media/kukorica.3c9aa7820ad72b418e3b.png",
     "index.html": "/peti_pizza/index.html",
-    "main.8f716080.css.map": "/peti_pizza/static/css/main.8f716080.css.map",
-    "main.39fa0f53.js.map": "/peti_pizza/static/js/main.39fa0f53.js.map",
+    "main.b2ea3729.css.map": "/peti_pizza/static/css/main.b2ea3729.css.map",
+    "main.71e547d1.js.map": "/peti_pizza/static/js/main.71e547d1.js.map",
     "787.d2308dac.chunk.js.map": "/peti_pizza/static/js/787.d2308dac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f716080.css",
-    "static/js/main.39fa0f53.js"
+    "static/css/main.b2ea3729.css",
+    "static/js/main.71e547d1.js"
   ]
 }
