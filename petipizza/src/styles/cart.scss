@@ -1,14 +1,34 @@
  body.active-modal {
-    overflow-y: hidden;
+   overflow-y: hidden; 
+
 } 
 
 .btnModal {
-    padding: 10px 20px;
-    display: block;
+    button{
+        margin: 10px 10px;
+        width: 60px;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        color: red;
+    }
+    h4{
+        text-align: center;
+        
+    }
+    align-items: center;
+    display: flex; 
     margin: 100px auto 0;
     font-size: 18px;
-}
+    position: fixed;
+    top: -98px;
+    left: 92%;
 
+}
+.modal{
+    z-index: 10;
+
+}
 .modal, .overlay {
     width: 100vw;
     height: 100vh;
@@ -17,6 +37,7 @@
     right: 0;
     bottom: 0;
     position: fixed;
+   
 }
 
 .overlay {
@@ -59,5 +80,25 @@
     &:hover {
 transition: all ease-in 0.4s;
 background: rgb(196, 196, 196);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .btnModal {
+        position: fixed;
+        top: -98px;
+        left: 90%;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .btnModal {
+        position: fixed;
+        top: -46px;
+        left: 69%;
+        background: white;
+        border-radius: 30px;
+
     }
 }

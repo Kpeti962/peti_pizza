@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import pizzas from "../datas/pizzas";
-import '../styles/cart.scss'
- import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faXmark} from "@fortawesome/free-solid-svg-icons"; 
-
+import "../styles/cart.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark,faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = ({ cartItems, setCartItems }) => {
   const [modal, setModal] = useState(false);
@@ -12,10 +11,10 @@ const Cart = ({ cartItems, setCartItems }) => {
     setModal(!modal);
   };
 
-  if(modal) {
-    document.body.classList.add('active-modal')
+  if (modal) {
+    document.body.classList.add("active-modal");
   } else {
-    document.body.classList.remove('active-modal')
+    document.body.classList.remove("active-modal");
   }
 
   const deleteHandler = (clickedItemId) => {
@@ -25,19 +24,13 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(filteredArray);
   };
 
-  /*   const resetHandler = () => {
-   
-    setCartItems([]);
-     localStorage.removeItem("localCart"); 
-  }; */
+
 
   const sumPrice = () => {
     let sumResult = 0;
     cartItems.forEach((item) => (sumResult += Number(item.price)));
-    if(sumResult === 0){
-      return "A kosár üres"
-    }else if(sumResult > 20000){
-      return "Azért állj már le. Így is annyira dagadt vagy, hogy sapkában kellene érkezzél egy disznóvágásra, hogy ne téged vágjanak le. "
+    if (sumResult === 0) {
+      return "A kosár üres";
     } else {
       return `Összesen + Szállítási díj(300 Ft): ${sumResult + 300} Ft`;
     }
@@ -45,35 +38,37 @@ const Cart = ({ cartItems, setCartItems }) => {
 
   return (
     <>
-      <button className="btnModal" onClick={toggleModal}>
-        Kosár megtekintése
+    <div className="btnModal">
+      <h4>{cartItems.length}</h4>
+      <button onClick={toggleModal}>
+      <FontAwesomeIcon icon={faCartShopping} />
       </button>
+    </div>
       {modal && (
-
         <div className="modal">
-        <div onClick={toggleModal} className="overlay"></div>
-        <div className="modalContent">
-          <ul>
-            {cartItems !== undefined &&
-              cartItems.length > 0 &&
-              cartItems.map((item, index) => {
-                return (
-                  <div className="cartItems">
-                    <li key={index}>{item.itemName}</li>
-                    <button onClick={() => deleteHandler(item.id)}>
-                      Törlés
-                    </button>
-                  </div>
-                );
-              })}
-          </ul>
-          <button className="closeModal" onClick={toggleModal}>
-          <FontAwesomeIcon icon={faXmark} />
-          </button>
-          <h3>{sumPrice()}</h3>
+          <div onClick={toggleModal} className="overlay"></div>
+          <div className="modalContent">
+            <ul>
+              {cartItems !== undefined &&
+                cartItems.length > 0 &&
+                cartItems.map((item, index) => {
+                  return (
+                    <div  key={index} className="cartItems">
+                      <li>{item.itemName}</li>
+                      <button onClick={() => deleteHandler(item.id)}>
+                        Törlés
+                      </button>
+                    </div>
+                  );
+                })}
+            </ul>
+            <button className="closeModal" onClick={toggleModal}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <h3>{sumPrice()}</h3>
+          </div>
         </div>
-      </div>
-        )}
+      )}
     </>
   );
 };

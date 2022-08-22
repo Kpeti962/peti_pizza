@@ -7,11 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartShopping} from "@fortawesome/free-solid-svg-icons"; 
 //Amit kérdezni: Link, Routes; Cart komponensbe a local storaget átimportálni; id átadása a deletehandler-nél
 
-const PizzaPage = () => {
+const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const { pizzaElements } = pizzas;
 
-  const [cart, setCart] = useState(0);
-  const [cartItems, setCartItems] = useState([]);
+/*   const [cart, setCart] = useState(0);
+  const [cartItems, setCartItems] = useState([]); */
 
   /* useEffect(()=> {
   if(localStorage.getItem("localCart")){
@@ -99,7 +99,7 @@ const PizzaPage = () => {
 
        
       </div>
-      <Cart cartItems={cartItems} setCartItems={setCartItems} />
+    
     </>
   );
 };
