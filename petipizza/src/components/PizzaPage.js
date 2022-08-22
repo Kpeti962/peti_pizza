@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "../styles/pizzaPage.scss";
 import pizzas from "../datas/pizzas";
-import Cart from "./Cart";
 import { v4 as uuidv4 } from "uuid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCartShopping} from "@fortawesome/free-solid-svg-icons"; 
-//Amit kérdezni: Link, Routes; Cart komponensbe a local storaget átimportálni; id átadása a deletehandler-nél
+import { motion } from "framer-motion";
+import { pageAnim } from "../animations"; 
+
 
 const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const { pizzaElements } = pizzas;
-
-/*   const [cart, setCart] = useState(0);
-  const [cartItems, setCartItems] = useState([]); */
-
-  /* useEffect(()=> {
-  if(localStorage.getItem("localCart")){
-    const storedCart = JSON.parse(localStorage.getItem("localCart"));
-    setCartItems(storedCart);
-  }
-  },[]); */
 
   useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(cartItems));
@@ -36,7 +25,6 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
     localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]));
   };
 
-
   const sumPrice = () => {
     let sumResult = 0;
     cartItems.forEach((item) => (sumResult += Number(item.price)));
@@ -44,11 +32,17 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   };
   return (
     <>
-      <div className="pizzaPageWrapper">
+      <motion.div
+        className="pizzaPageWrapper"
+        exit="exit"
+        variants={pageAnim}
+        initial="hidden"
+        animate="show"
+      >
         <h1>Pizzáink</h1>
 
         {pizzaElements.map((pizza, index) => (
-          <div key={index}  className="pizzaCard">
+          <div key={index} className="pizzaCard">
             <h4>{pizza.name}</h4>
             <div className="imgPricesSizesWrapper">
               <img key={index} src={pizza.img} alt="margherita" />
@@ -68,7 +62,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         title={28}
                         id={uuidv4()}
                       >
-                       Kosárba
+                        Kosárba
                       </button>
                       {<li>{`${pizza.price28} Ft`}</li>}
                     </div>
@@ -92,14 +86,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
           </div>
         ))}
         <h3>{`${sumPrice()} Ft`}</h3>
-
-     
-      </div>
-      <div className="price">
-
-       
-      </div>
-    
+      </motion.div>
     </>
   );
 };

@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import margherita from "../img/margherita.png";
 import ham from "../img/ham.png";
@@ -18,7 +17,7 @@ const pizzas = {
         size28: 28,
         size32: 32,
         id: uuidv4(),
-        isChecked: false
+        
        
       },
       {
@@ -29,7 +28,7 @@ const pizzas = {
         size28: 28,
         size32: 32,
         id: uuidv4(),
-        isChecked: false
+        
        
       },
       {
@@ -40,7 +39,7 @@ const pizzas = {
         size28: 28,
         size32: 32,
         id: uuidv4(),
-        isChecked: false
+        
        
       },
       {
@@ -51,7 +50,7 @@ const pizzas = {
         size28: 28,
         size32: 32,
         id: uuidv4(),
-        isChecked: false
+        
        
       },
     ]

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import pizzas from "../datas/pizzas";
+import React, { useState } from "react";
 import "../styles/cart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark,faCartShopping } from "@fortawesome/free-solid-svg-icons";
