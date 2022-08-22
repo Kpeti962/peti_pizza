@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const navElements = [
-    { name: "Főoldal", src: "1", pageName: "mainpage" },
+    { name: "Főoldal", src: "1", pageName: "" },
     { name: "Pizzáink", src: "2", pageName: "pizzapage" },
     { name: "Hamburgereink", src: "3", pageName: "hamburgerpage" },
   ];

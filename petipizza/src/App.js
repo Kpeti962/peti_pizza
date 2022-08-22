@@ -29,7 +29,7 @@ function App() {
 
       
       <Routes location={location} key={location.pathname}>
-        <Route path="mainpage" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/pizzapage" element={<PizzaPage  cartItems={cartItems} setCartItems={setCartItems} cart={cart} setCart={setCart} />} />
         <Route path="/hamburgerpage" element={<HamburgerPage cartItems={cartItems} setCartItems={setCartItems} cart={cart} setCart={setCart}  />} />
       </Routes>

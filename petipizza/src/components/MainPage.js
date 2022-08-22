@@ -7,6 +7,12 @@ const MainPage = () => {
   const [temps, setTemps] = useState("");
 
   useEffect(() => {
+
+    //Kérdés: mit kell átállítani, hogy ne egy semmibe érkezzünk, ha rámegyünk az oldalra
+
+
+
+
     fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Szeged?unitGroup=metric&key=QQ23V5SKEZY598SD5UL2TQCGX&contentType=json"
     )
