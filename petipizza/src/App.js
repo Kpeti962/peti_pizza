@@ -26,10 +26,8 @@ function App() {
       onExitComplete={() => {
         window.scrollTo(0, 0)
       }}>
-
-      
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/peti_pizza" element={<MainPage />} />
         <Route path="/pizzapage" element={<PizzaPage  cartItems={cartItems} setCartItems={setCartItems} cart={cart} setCart={setCart} />} />
         <Route path="/hamburgerpage" element={<HamburgerPage cartItems={cartItems} setCartItems={setCartItems} cart={cart} setCart={setCart}  />} />
       </Routes>

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/nav.scss"
+
 
 const Nav = () => {
   const navElements = [
-    { name: "Főoldal", src: "1", pageName: "" },
+    { name: "Főoldal", src: "1", pageName: "peti_pizza" },
     { name: "Pizzáink", src: "2", pageName: "pizzapage" },
     { name: "Hamburgereink", src: "3", pageName: "hamburgerpage" },
   ];
