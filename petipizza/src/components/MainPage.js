@@ -7,7 +7,7 @@ import axios from "axios";
 
 const MainPage = () => {
   const [weather, setWeather] = useState(null);
-  const [message, setMessage] = useState("");
+
 
   useEffect(() => {
     axios
@@ -16,27 +16,12 @@ const MainPage = () => {
       )
       .then((data) => {
         setWeather(data.data);
-        console.log(data.data.location.name);
-        console.log(data.data.current.temp_c);
-        console.log(data.data.current.condition.icon);
+    
       })
       .catch((err) => console.log(err));
   }, []);
 
-  /* 
-  useEffect(() => {
-    fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=46.26&longitude=20.16&hourly=temperature_2m"
-    )
-    
-      .then((response) => response.json() )
-      .then((data) => setTemps(data.hourly.temperature_2m[data.hourly.temperature_2m.length-1]));
-      if(temps>25){
-        setMessage("Menj ki a szabadba élvezd a jó időt")
-      } else if(temps<20){
-        setMessage("Öltözz melegen")
-      }
-  }, []); */
+
 
   return (
     <motion.div
