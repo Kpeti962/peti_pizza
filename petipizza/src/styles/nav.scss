@@ -1,5 +1,7 @@
 .title{
 margin-top: 30px;
+font-family: 'DynaPuff', cursive;
+font-size: larger;
 }
 .navElementsWrapper{
     width: 80%;
@@ -13,6 +15,7 @@ margin-top: 30px;
         justify-content: space-around;
         list-style-type: none;
         li{
+            font-family: 'DynaPuff', cursive;
             padding: 10px 0;
             cursor: pointer;
 

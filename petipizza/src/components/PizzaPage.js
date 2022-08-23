@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/pizzaPage.scss";
+import "../styles/foodPage.scss";
 import pizzas from "../datas/pizzas";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
@@ -33,7 +33,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   return (
     <>
       <motion.div
-        className="pizzaPageWrapper"
+        className="foodPageWrapper"
         exit="exit"
         variants={pageAnim}
         initial="hidden"
@@ -42,7 +42,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
         <h1>Pizzáink</h1>
 
         {pizzaElements.map((pizza, index) => (
-          <div key={index} className="pizzaCard">
+          <div key={index} className="foodCard">
             <h4>{pizza.name}</h4>
             <div className="imgPricesSizesWrapper">
               <img key={index} src={pizza.img} alt="margherita" />

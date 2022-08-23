@@ -16,6 +16,7 @@
         text-align: center;
         
     }
+    z-index: 15;
     align-items: center;
     display: flex; 
     margin: 100px auto 0;
@@ -83,7 +84,7 @@ background: rgb(255, 78, 78);
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
     .btnModal {
         position: fixed;
         top: -98px;
@@ -92,13 +93,16 @@ background: rgb(255, 78, 78);
 }
 
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
     .btnModal {
         position: fixed;
-        top: -46px;
-        left: 69%;
+        top: -42px;
+        left: 72%;
         background: white;
         border-radius: 30px;
+        height: 20px;
+        width: 30px;
+        padding:10px
 
     }
 }
