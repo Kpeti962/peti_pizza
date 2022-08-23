@@ -3,13 +3,12 @@ import terrace from "../img/terrace.png";
 import { motion } from "framer-motion";
 import { pageAnim } from "../animations";
 import "../styles/mainPage.scss";
-import axios from "axios";
+
 
 const MainPage = () => {
   const [weather, setWeather] = useState(null);
 
-
-  useEffect(() => {
+  /*   useEffect(() => {
     axios
       .get(
         "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no"
@@ -19,9 +18,15 @@ const MainPage = () => {
     
       })
       .catch((err) => console.log(err));
+  }, []); */
+
+  useEffect(() => {
+    fetch(
+      "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no"
+    )
+      .then((response) => response.json())
+      .then((data) => setWeather(data));
   }, []);
-
-
 
   return (
     <motion.div
@@ -32,11 +37,13 @@ const MainPage = () => {
       animate="show"
     >
       <div className="imgWrapper">
-       {weather && ( <div className="weatherWrapper">
-          <h3>{weather.location.name}</h3>
-          <h3>{weather.current.temp_c} °C</h3>
-          <img src={weather.current.condition.icon} alt="valami" />    
-        </div>)}
+        {weather && (
+          <div className="weatherWrapper">
+            <h4>{weather.location.name}</h4>
+            <h4>{weather.current.temp_c} °C</h4>
+            <img src={weather.current.condition.icon} alt="" />
+          </div>
+        )}
         <img src={terrace} alt="terrace" />
         <div className="descriptionWrapper">
           <h3>
