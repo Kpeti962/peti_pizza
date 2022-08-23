@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/peti_pizza/static/css/main.e3f75add.css",
-    "main.js": "/peti_pizza/static/js/main.ac43b373.js",
+    "main.css": "/peti_pizza/static/css/main.11c59ca6.css",
+    "main.js": "/peti_pizza/static/js/main.ad88f7d1.js",
     "static/js/787.d2308dac.chunk.js": "/peti_pizza/static/js/787.d2308dac.chunk.js",
     "static/media/ham.png": "/peti_pizza/static/media/ham.d24459fcb557d2d9ab68.png",
     "static/media/margherita.png": "/peti_pizza/static/media/margherita.799633a990776e620aed.png",
@@ -13,12 +13,12 @@
     "static/media/chicken.png": "/peti_pizza/static/media/chicken.b0ab0fcf4422faecee1b.png",
     "static/media/kukorica.png": "/peti_pizza/static/media/kukorica.3c9aa7820ad72b418e3b.png",
     "index.html": "/peti_pizza/index.html",
-    "main.e3f75add.css.map": "/peti_pizza/static/css/main.e3f75add.css.map",
-    "main.ac43b373.js.map": "/peti_pizza/static/js/main.ac43b373.js.map",
+    "main.11c59ca6.css.map": "/peti_pizza/static/css/main.11c59ca6.css.map",
+    "main.ad88f7d1.js.map": "/peti_pizza/static/js/main.ad88f7d1.js.map",
     "787.d2308dac.chunk.js.map": "/peti_pizza/static/js/787.d2308dac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3f75add.css",
-    "static/js/main.ac43b373.js"
+    "static/css/main.11c59ca6.css",
+    "static/js/main.ad88f7d1.js"
   ]
 }
