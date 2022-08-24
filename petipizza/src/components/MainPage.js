@@ -20,12 +20,17 @@ const MainPage = () => {
       .catch((err) => console.log(err));
   }, []); */
 
+
+
   useEffect(() => {
+
     fetch(
-      "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no"
-    )
+      "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no",
+    {
+      method: 'GET'
+    })
       .then((response) => response.json())
-      .then((data) => setWeather(data));
+      .then((data) => setWeather(data)).then((error)=> console.log(error))
   }, []);
 
   return (
