@@ -14,6 +14,7 @@ const handleToggle = () => {
   setNavbarOpen(!navbarOpen)
 }
 
+
   const navElements = [
     { name: "Főoldal", src: "1", pageName: "peti_pizza" },
     { name: "Pizzáink", src: "2", pageName: "pizzapage" },
@@ -27,7 +28,7 @@ const handleToggle = () => {
 </button>
       <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
         {navElements.map((element, index) => (
-          <li key={index}>
+          <li  onClick={handleToggle} key={index}>
             <Link to={`/${element.pageName}`}>{element.name}</Link>
           </li>
         ))}
