@@ -25,7 +25,7 @@ const MainPage = () => {
   useEffect(() => {
 
     fetch(
-      "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no",
+      "https://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no",
     {
       method: 'GET'
     })
