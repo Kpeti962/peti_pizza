@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/peti_pizza/static/css/main.11c59ca6.css",
-    "main.js": "/peti_pizza/static/js/main.9c3dbfdc.js",
+    "main.css": "/peti_pizza/static/css/main.376fc4ed.css",
+    "main.js": "/peti_pizza/static/js/main.08811a94.js",
     "static/js/787.d2308dac.chunk.js": "/peti_pizza/static/js/787.d2308dac.chunk.js",
     "static/media/ham.png": "/peti_pizza/static/media/ham.d24459fcb557d2d9ab68.png",
+    "static/media/terrace.png": "/peti_pizza/static/media/terrace.31594008f446fe9b080a.png",
     "static/media/margherita.png": "/peti_pizza/static/media/margherita.799633a990776e620aed.png",
     "static/media/juicylucy.png": "/peti_pizza/static/media/juicylucy.59c2e365e628a6009daa.png",
     "static/media/cheese.png": "/peti_pizza/static/media/cheese.8cd04c85d7ab33b7f31c.png",
     "static/media/bacon.png": "/peti_pizza/static/media/bacon.9a160b8f45cae8fb91ce.png",
-    "static/media/terrace.png": "/peti_pizza/static/media/terrace.03f24668dbaede3b22a0.png",
     "static/media/funghi.png": "/peti_pizza/static/media/funghi.ba7b515dc697ec8c1e59.png",
+    "static/media/foodpanda.png": "/peti_pizza/static/media/foodpanda.e83b63c09addfc6e32c1.png",
     "static/media/chicken.png": "/peti_pizza/static/media/chicken.b0ab0fcf4422faecee1b.png",
     "static/media/kukorica.png": "/peti_pizza/static/media/kukorica.3c9aa7820ad72b418e3b.png",
+    "static/media/wolt.png": "/peti_pizza/static/media/wolt.55a60031101111958df9.png",
     "index.html": "/peti_pizza/index.html",
-    "main.11c59ca6.css.map": "/peti_pizza/static/css/main.11c59ca6.css.map",
-    "main.9c3dbfdc.js.map": "/peti_pizza/static/js/main.9c3dbfdc.js.map",
+    "main.376fc4ed.css.map": "/peti_pizza/static/css/main.376fc4ed.css.map",
+    "main.08811a94.js.map": "/peti_pizza/static/js/main.08811a94.js.map",
     "787.d2308dac.chunk.js.map": "/peti_pizza/static/js/787.d2308dac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11c59ca6.css",
-    "static/js/main.9c3dbfdc.js"
+    "static/css/main.376fc4ed.css",
+    "static/js/main.08811a94.js"
   ]
 }
