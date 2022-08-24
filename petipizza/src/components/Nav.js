@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/nav.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars} from "@fortawesome/free-solid-svg-icons";
+import barssolid from '../img/bars-solid.svg'
+
 
 
 const Nav = () => {
+const [navbarOpen, setNavbarOpen] = useState(false)
+
+const handleToggle = () => {
+  setNavbarOpen(!navbarOpen)
+}
+
   const navElements = [
     { name: "Főoldal", src: "1", pageName: "peti_pizza" },
     { name: "Pizzáink", src: "2", pageName: "pizzapage" },
@@ -13,7 +23,9 @@ const Nav = () => {
   return (
     <>
     <div className="navElementsWrapper">
-      <ul>
+      <button onClick={handleToggle}><FontAwesomeIcon icon={faBars} />
+</button>
+      <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
         {navElements.map((element, index) => (
           <li key={index}>
             <Link to={`/${element.pageName}`}>{element.name}</Link>

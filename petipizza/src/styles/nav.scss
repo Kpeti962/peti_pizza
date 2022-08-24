@@ -1,7 +1,7 @@
 .title{
-margin-top: 30px;
-font-family: 'DynaPuff', cursive;
-font-size: larger;
+    margin-top: 30px;
+    font-family: 'DynaPuff', cursive;
+    font-size: larger;
 }
 .navElementsWrapper{
     width: 80%;
@@ -9,16 +9,23 @@ font-size: larger;
     position: fixed;
     top: 0;
     z-index: 1;
+    button{
+        display: none;
+    }
     ul{
-        background: rgb(221, 221, 221);
+        background: rgb(109, 109, 109);
         display: flex;
         justify-content: space-around;
         list-style-type: none;
         li{
+            a{
+                color: white;
+                text-decoration: none;
+            }
             font-family: 'DynaPuff', cursive;
             padding: 10px 0;
             cursor: pointer;
-
+            
             &:hover{
                 background: rgb(177, 175, 175);
                 transition: all ease-in-out 0.4s;
@@ -26,4 +33,56 @@ font-size: larger;
         }
 
     }
+
+}
+
+@media screen and (max-width: 900px){
+    .navElementsWrapper{
+        button{
+            display: flex;
+            position: fixed;
+            top:10%;
+            left: 6%;
+            z-index: 10;
+       
+        }
+    }
+    .menuNav {
+        overflow-y: scroll;
+        list-style: none;
+        position: fixed;
+        top: 5.9px;
+        left: -10%;
+        bottom: 0;
+        height: 100vh;
+        width: 0;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 9;
+        text-align: center;
+        opacity: 0.8;
+        transition-duration: 1s;
+    }
+    .menuNav.showMenu {
+        width: 100%;
+        background: black;
+        transition-duration: 1s;
+      }
+      .menuNav li:first-child {
+        margin-top: 2rem;
+      }
+
+ul{
+    flex-direction: column;
+    text-align: start;
+    background: none;
+    li{
+        color: white;
+        font-weight: 800;
+   
+
+    }
+
+}
 }
