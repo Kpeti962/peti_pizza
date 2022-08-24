@@ -3,26 +3,26 @@ import terrace from "../img/terrace.png";
 import { motion } from "framer-motion";
 import { pageAnim } from "../animations";
 import "../styles/mainPage.scss";
+import axios from "axios";
 
 
 const MainPage = () => {
   const [weather, setWeather] = useState(null);
 
-  /*   useEffect(() => {
+   useEffect(() => {
     axios
       .get(
-        "http://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no"
+        "https://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no"
       )
       .then((data) => {
         setWeather(data.data);
     
       })
       .catch((err) => console.log(err));
-  }, []); */
+  }, []); 
+  
 
-
-
-  useEffect(() => {
+/*   useEffect(() => {
 
     fetch(
       "https://api.weatherapi.com/v1/current.json?key=ced6e8ed8bb849b68d5125646221907&q=Szeged&aqi=no",
@@ -31,7 +31,7 @@ const MainPage = () => {
     })
       .then((response) => response.json())
       .then((data) => setWeather(data)).then((error)=> console.log(error))
-  }, []);
+  }, []); */
 
   return (
     <motion.div
