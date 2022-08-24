@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { pageAnim } from "../animations";
 import "../styles/mainPage.scss";
 import axios from "axios";
+import wolt from "../img/wolt.png"
+import foodpanda from "../img/foodpanda.png"
 
 
 const MainPage = () => {
@@ -47,6 +49,14 @@ const MainPage = () => {
           </h3>
         </div>
       </div>
+        <div className="foodpandaAndWoltSection">
+          
+          
+        
+          <img src={foodpanda} alt="" />
+            <h2>Válaszd a házhozszállíítást</h2>
+          <img src={wolt} alt="" />
+        </div>
     </motion.div>
   );
 };
