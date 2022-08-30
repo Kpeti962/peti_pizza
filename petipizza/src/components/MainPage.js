@@ -4,26 +4,22 @@ import { motion } from "framer-motion";
 import { pageAnim } from "../animations";
 import "../styles/mainPage.scss";
 import axios from "axios";
-import wolt from "../img/wolt.png"
-import foodpanda from "../img/foodpanda.png"
-
+import wolt from "../img/wolt.png";
+import foodpanda from "../img/foodpanda.png";
 
 const MainPage = () => {
   const [weather, setWeather] = useState(null);
 
-   useEffect(() => {
+  useEffect(() => {
     axios
       .get(
-       `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=Szeged&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API}&q=Szeged&aqi=no`
       )
       .then((data) => {
         setWeather(data.data);
-    
       })
       .catch((err) => console.log(err));
-  }, []); 
-  
-
+  }, []);
 
   return (
     <motion.div
@@ -49,14 +45,11 @@ const MainPage = () => {
           </h3>
         </div>
       </div>
-        <div className="foodpandaAndWoltSection">
-          
-          
-        
-          <img src={foodpanda} alt="" />
-            <h2>Válaszd a házhozszállíítást</h2>
-          <img src={wolt} alt="" />
-        </div>
+      <div className="foodpandaAndWoltSection">
+        <img src={foodpanda} alt="" />
+        <h2>Válaszd a házhozszállíítást</h2>
+        <img src={wolt} alt="" />
+      </div>
     </motion.div>
   );
 };

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/cart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark,faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
 
 const Cart = ({ cartItems, setCartItems }) => {
   const [modal, setModal] = useState(false);
@@ -23,11 +24,16 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(filteredArray);
   };
 
+//It hasn't gat any function yet
+  const cartItems1 = localStorage.getItem("localCart")
+
+
 
 
   const sumPrice = () => {
     let sumResult = 0;
     cartItems.forEach((item) => (sumResult += Number(item.price)));
+
     if (sumResult === 0) {
       return "A kosár üres";
     } else {
@@ -37,22 +43,23 @@ const Cart = ({ cartItems, setCartItems }) => {
 
   return (
     <>
-    <div className="btnModal">
-      <h4>{cartItems.length}</h4>
-      <button onClick={toggleModal}>
-      <FontAwesomeIcon icon={faCartShopping} />
-      </button>
-    </div>
+      <div className="btnModal">
+        <h4>{cartItems.length}</h4>
+        <button onClick={toggleModal}>
+          <FontAwesomeIcon icon={faCartShopping} />
+        </button>
+      </div>
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modalContent">
+          
             <ul>
               {cartItems !== undefined &&
                 cartItems.length > 0 &&
                 cartItems.map((item, index) => {
                   return (
-                    <div  key={index} className="cartItems">
+                    <div key={index} className="cartItems">
                       <li>{item.itemName}</li>
                       <button onClick={() => deleteHandler(item.id)}>
                         Törlés

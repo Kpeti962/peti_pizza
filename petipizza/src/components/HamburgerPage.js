@@ -3,7 +3,8 @@ import "../styles/foodPage.scss";
 import hamburgers from "../datas/hamburgers";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import { pageAnim } from "../animations"; 
+import { pageAnim } from "../animations";
+
 
 const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const { hamburgerElements } = hamburgers;

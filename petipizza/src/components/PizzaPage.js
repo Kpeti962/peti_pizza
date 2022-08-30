@@ -1,20 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/foodPage.scss";
 import pizzas from "../datas/pizzas";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import { pageAnim } from "../animations"; 
-
+import { pageAnim, successAnim } from "../animations";
+import Alert from "react-bootstrap/Alert";
 
 const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
+  const [added, setAdded] = useState(false);
+
   const { pizzaElements } = pizzas;
 
-  useEffect(() => {
+/*   useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(cartItems));
-  }, [cartItems]);
+  }, [cartItems]); */
 
   const addToCart = (e) => {
     e.preventDefault();
+
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
 
     const newItem = `${e.target.name} ${e.target.title}  cm (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
@@ -22,7 +27,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
       ...cartItems,
       { itemName: newItem, id: uuidv4(), price: e.target.value },
     ]);
-    localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]));
+    localStorage.setItem("localCart", JSON.stringify(cartItems));
   };
 
   const sumPrice = () => {
@@ -87,6 +92,18 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
         ))}
         <h3>{`${sumPrice()} Ft`}</h3>
       </motion.div>
+
+      {added && (
+        <motion.div
+          className="added"
+          exit="exit"
+          variants={successAnim}
+          initial="hidden"
+          animate="show"
+        >
+          <h2>Tétel hozzáadva a kosárhoz</h2>
+        </motion.div>
+      )}
     </>
   );
 };
