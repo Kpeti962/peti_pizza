@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/foodPage.scss";
 import hamburgers from "../datas/hamburgers";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import { pageAnim } from "../animations";
+import { pageAnim, successAnim } from "../animations";
 
 
 const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
+  const [added, setAdded] = useState(false);
+
   const { hamburgerElements } = hamburgers;
 
   useEffect(() => {
@@ -15,6 +17,8 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
 
   const addToCart = (e) => {
     e.preventDefault();
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
 
     const newItem = `${e.target.name} ${e.target.title} (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
@@ -89,6 +93,17 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
         <h3>{`${sumPrice()} Ft`}</h3>
       </motion.div>
       <div className="price"></div>
+      {added && (
+        <motion.div
+          className="added"
+          exit="exit"
+          variants={successAnim}
+          initial="hidden"
+          animate="show"
+        >
+          <h2>Tétel hozzáadva a kosárhoz</h2>
+        </motion.div>
+      )}
     </>
   );
 };
