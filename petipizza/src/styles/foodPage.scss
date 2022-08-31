@@ -22,7 +22,7 @@
     border-radius: 30px;
   }
 }
-.btnAdded {
+/* .btnAdded {
   animation-name: add;
   animation-duration: 0.5s;
 }
@@ -42,7 +42,7 @@
   100% {
     transform: rotate(0deg);
   }
-}
+} */
 
 .sizeAndPriceWrapper {
   display: block;
@@ -57,20 +57,20 @@
     justify-content: space-evenly;
     .price1 {
       align-items: center;
-      width: 19vh;
+      width: 18vh;
       display: flex;
       button {
-        width: 61px;
+        width: 65px;
         /*  margin-right: 8px; */
         cursor: pointer;
       }
     }
     .price2 {
       align-items: center;
-      width: 19vh;
+      width: 18vh;
       display: flex;
       button {
-        width: 61px;
+        width: 65px;
         /*  margin-right: 8px; */
         cursor: pointer;
       }
@@ -168,5 +168,8 @@
     padding-bottom: 50px;
     background: gray;
     border-radius: 20px;
+  }
+  .added{
+    font-size: 12px;
   }
 }
