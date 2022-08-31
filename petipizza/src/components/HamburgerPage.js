@@ -59,7 +59,10 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                   </div>
                   <div className="prices">
                     <div className="price1">
-                      <button
+                      <motion.button
+                        whileTap={{
+                        scale: 0.8,
+                      }}
                         onClick={addToCart}
                         size={hamburger.size28}
                         value={hamburger.price28}
@@ -68,11 +71,14 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         id={uuidv4()}
                       >
                         Kosárba
-                      </button>
+                      </motion.button>
                       {<li>{`${hamburger.price28} Ft`}</li>}
                     </div>
                     <div className="price2">
-                      <button
+                      <motion.button
+                        whileTap={{
+                        scale: 0.8,
+                      }}
                         onClick={addToCart}
                         size={hamburger.size32}
                         value={hamburger.price32}
@@ -81,7 +87,7 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         id={uuidv4()}
                       >
                         Kosárba
-                      </button>
+                      </motion.button>
                       {<li>{`${hamburger.price32} Ft`}</li>}
                     </div>
                   </div>
