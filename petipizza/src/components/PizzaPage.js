@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/foodPage.scss";
 import pizzas from "../datas/pizzas";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { pageAnim, successAnim } from "../animations";
-import Alert from "react-bootstrap/Alert";
+
 
 const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const [added, setAdded] = useState(false);
@@ -59,7 +59,10 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                   </div>
                   <div className="prices">
                     <div className="price1">
-                      <button
+                      <motion.button
+                      whileTap={{
+                        scale: 0.8,
+                      }}
                         onClick={addToCart}
                         size={pizza.size28}
                         value={pizza.price28}
@@ -68,11 +71,14 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         id={uuidv4()}
                       >
                         Kosárba
-                      </button>
+                      </motion.button>
                       {<li>{`${pizza.price28} Ft`}</li>}
                     </div>
                     <div className="price2">
-                      <button
+                      <motion.button
+                      whileTap={{
+                        scale: 0.8,
+                      }}
                         onClick={addToCart}
                         size={pizza.size32}
                         value={pizza.price32}
@@ -81,7 +87,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         id={uuidv4()}
                       >
                         Kosárba
-                      </button>
+                      </motion.button>
                       {<li>{`${pizza.price32} Ft`}</li>}
                     </div>
                   </div>

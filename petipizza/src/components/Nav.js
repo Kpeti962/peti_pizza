@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "../styles/nav.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import barssolid from "../img/bars-solid.svg";
+import { motion } from "framer-motion";
+
 
 const Nav = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -26,9 +27,9 @@ const Nav = () => {
         </button>
         <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
           {navElements.map((element, index) => (
-            <li onClick={handleToggle} key={index}>
+            <motion.li transition={{duration: 0.1}}  whileHover={{scale: 1.05, textShadow: "0px 0px 8px #ffffff", boxShadow: "0px 0px 8px #ffffff"}} onClick={handleToggle} key={index}>
               <Link to={`/${element.pageName}`}>{element.name}</Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>

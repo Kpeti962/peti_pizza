@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/cart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion";
 
 const Cart = ({ cartItems, setCartItems }) => {
   const [modal, setModal] = useState(false);
@@ -24,10 +24,6 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(filteredArray);
   };
 
-//It hasn't gat any function yet
-  const cartItems1 = localStorage.getItem("localCart")
-
-
 
 
   const sumPrice = () => {
@@ -45,15 +41,20 @@ const Cart = ({ cartItems, setCartItems }) => {
     <>
       <div className="btnModal">
         <h4>{cartItems.length}</h4>
-        <button onClick={toggleModal}>
+        <motion.button
+         whileHover={{
+            scale: 1.1,
+            boxShadow: "0px 0px 5px #FF0000"
+          }}
+          onClick={toggleModal}
+        >
           <FontAwesomeIcon icon={faCartShopping} />
-        </button>
+        </motion.button>
       </div>
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="modalContent">
-          
             <ul>
               {cartItems !== undefined &&
                 cartItems.length > 0 &&
