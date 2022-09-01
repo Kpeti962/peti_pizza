@@ -46,32 +46,39 @@
 
 .sizeAndPriceWrapper {
   display: block;
+  display: flex;
   .sizes {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    width: 28vh;
+    width: 8vh;
+    li {
+      margin: 20px 0;
+    }
   }
   .prices {
     display: flex;
+    flex-direction: column;
     margin-top: 10px;
     justify-content: space-evenly;
     .price1 {
       align-items: center;
-      width: 18vh;
+      width: 20vh;
       display: flex;
       button {
         width: 65px;
-        /*  margin-right: 8px; */
+        margin: 30px 0;
+
         cursor: pointer;
       }
     }
     .price2 {
       align-items: center;
-      width: 18vh;
+      width: 20vh;
       display: flex;
       button {
         width: 65px;
-        /*  margin-right: 8px; */
+
         cursor: pointer;
       }
     }
@@ -138,24 +145,37 @@
     background: none;
   }
   .sizePriceButtonWrapper {
-    display: flex;
     .sizeAndPriceWrapper {
+      display: block;
       position: absolute;
       top: 100%;
       left: 10%;
       .sizes {
-        width: 75%;
+        width: 65%;
+        flex-direction: row;
+        li {
+          margin: 0;
+        }
       }
-      .price1 {
-        align-items: flex-start;
-        width: 24vh;
-      }
-      .price2 {
-        align-items: flex-start;
-        width: 24vh;
-      }
-      button {
-        height: 20px;
+      .prices {
+        flex-direction: row;
+        display: flex;
+        .price1 {
+          align-items: flex-start;
+         width: 15vh;
+      
+          button {
+            margin: 0;
+            height: 20px;
+          }
+        }
+        .price2 {
+          align-items: flex-start;
+          width: 18vh;
+          button {
+            height: 20px;
+          }
+        }
       }
     }
     .btn {
@@ -169,7 +189,8 @@
     background: gray;
     border-radius: 20px;
   }
-  .added{
+  .added {
     font-size: 12px;
   }
 }
+
