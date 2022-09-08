@@ -14,9 +14,9 @@ const Nav = () => {
   };
 
   const navElements = [
-    { name: "Főoldal", src: "1", pageName: "peti_pizza" },
-    { name: "Pizzáink", src: "2", pageName: "pizzapage" },
-    { name: "Hamburgereink", src: "3", pageName: "hamburgerpage" },
+    { name: "Main Page", src: "1", pageName: "peti_pizza" },
+    { name: "Pizzas", src: "2", pageName: "pizzapage" },
+    { name: "Hamburgers", src: "3", pageName: "hamburgerpage" },
   ];
 
   return (

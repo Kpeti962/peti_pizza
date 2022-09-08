@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { pageAnim, successAnim } from "../animations";
 
-
 const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const [added, setAdded] = useState(false);
 
@@ -19,14 +18,12 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
     e.preventDefault();
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
-
     const newItem = `${e.target.name} ${e.target.title} (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
     setCartItems([
       ...cartItems,
       { itemName: newItem, id: uuidv4(), price: e.target.value },
     ]);
-    localStorage.setItem("localCart", JSON.stringify([...cartItems, newItem]));
   };
 
   const sumPrice = () => {
@@ -44,7 +41,7 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
         initial="hidden"
         animate="show"
       >
-        <h1>Hamburgereink</h1>
+        <h1>Hamburgers</h1>
 
         {hamburgerElements.map((hamburger, index) => (
           <div key={index} className="foodCard">
@@ -61,8 +58,8 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                     <div className="price1">
                       <motion.button
                         whileTap={{
-                        scale: 0.8,
-                      }}
+                          scale: 0.8,
+                        }}
                         onClick={addToCart}
                         size={hamburger.size28}
                         value={hamburger.price28}
@@ -70,15 +67,15 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         title={"Burger"}
                         id={uuidv4()}
                       >
-                        Kosárba
+                        Add
                       </motion.button>
                       {<li>{`${hamburger.price28} Ft`}</li>}
                     </div>
                     <div className="price2">
                       <motion.button
                         whileTap={{
-                        scale: 0.8,
-                      }}
+                          scale: 0.8,
+                        }}
                         onClick={addToCart}
                         size={hamburger.size32}
                         value={hamburger.price32}
@@ -86,7 +83,7 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         title={"Menü"}
                         id={uuidv4()}
                       >
-                        Kosárba
+                        Add
                       </motion.button>
                       {<li>{`${hamburger.price32} Ft`}</li>}
                     </div>
@@ -107,7 +104,7 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
           initial="hidden"
           animate="show"
         >
-          <h2>Tétel hozzáadva a kosárhoz</h2>
+          <h2>Added to cart</h2>
         </motion.div>
       )}
     </>

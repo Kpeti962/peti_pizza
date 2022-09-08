@@ -1,34 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/foodPage.scss";
 import pizzas from "../datas/pizzas";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { pageAnim, successAnim } from "../animations";
 
-
 const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
   const [added, setAdded] = useState(false);
 
   const { pizzaElements } = pizzas;
 
-/*   useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(cartItems));
-  }, [cartItems]); */
+  }, [cartItems]);
 
   const addToCart = (e) => {
     e.preventDefault();
-
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
-
     const newItem = `${e.target.name} ${e.target.title}  cm (${e.target.value} Ft)`;
     setCart(cart + parseInt(e.target.value));
     setCartItems([
       ...cartItems,
       { itemName: newItem, id: uuidv4(), price: e.target.value },
     ]);
-    localStorage.setItem("localCart", JSON.stringify(cartItems));
   };
+  
 
   const sumPrice = () => {
     let sumResult = 0;
@@ -44,7 +41,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
         initial="hidden"
         animate="show"
       >
-        <h1>Pizzáink</h1>
+        <h1>Pizzas</h1>
 
         {pizzaElements.map((pizza, index) => (
           <div key={index} className="foodCard">
@@ -60,9 +57,9 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                   <div className="prices">
                     <div className="price1">
                       <motion.button
-                      whileTap={{
-                        scale: 0.8,
-                      }}
+                        whileTap={{
+                          scale: 0.8,
+                        }}
                         onClick={addToCart}
                         size={pizza.size28}
                         value={pizza.price28}
@@ -70,15 +67,15 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         title={28}
                         id={uuidv4()}
                       >
-                        Kosárba
+                        Add
                       </motion.button>
                       {<li>{`${pizza.price28} Ft`}</li>}
                     </div>
                     <div className="price2">
                       <motion.button
-                      whileTap={{
-                        scale: 0.8,
-                      }}
+                        whileTap={{
+                          scale: 0.8,
+                        }}
                         onClick={addToCart}
                         size={pizza.size32}
                         value={pizza.price32}
@@ -86,7 +83,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
                         title={32}
                         id={uuidv4()}
                       >
-                        Kosárba
+                        Add
                       </motion.button>
                       {<li>{`${pizza.price32} Ft`}</li>}
                     </div>
@@ -107,7 +104,7 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
           initial="hidden"
           animate="show"
         >
-          <h2>Tétel hozzáadva a kosárhoz</h2>
+          <h2>Added to cart</h2>
         </motion.div>
       )}
     </>

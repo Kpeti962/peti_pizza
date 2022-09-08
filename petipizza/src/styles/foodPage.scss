@@ -151,7 +151,7 @@
       top: 100%;
       left: 10%;
       .sizes {
-        width: 65%;
+        width: 80%;
         flex-direction: row;
         li {
           margin: 0;
@@ -161,8 +161,8 @@
         flex-direction: row;
         display: flex;
         .price1 {
-          align-items: flex-start;
-         width: 15vh;
+         width: 18vh;
+         height: 10px;
       
           button {
             margin: 0;
@@ -170,8 +170,8 @@
           }
         }
         .price2 {
-          align-items: flex-start;
           width: 18vh;
+          height: 10px;
           button {
             height: 20px;
           }

@@ -40,14 +40,13 @@ const MainPage = () => {
         <img src={terrace} alt="terrace" />
         <div className="descriptionWrapper">
           <h3>
-            Tengerre néző teraszunkkal várjuk kedves vendégeinket a csodaszép
-            Kazincbarcikán, Soprontól keletre.
+            Place of new actions (under construction)
           </h3>
         </div>
       </div>
       <div className="foodpandaAndWoltSection">
         <img src={foodpanda} alt="" />
-        <h2>Válaszd a házhozszállíítást</h2>
+        <h2>Choose home delivery</h2>
         <img src={wolt} alt="" />
       </div>
     </motion.div>

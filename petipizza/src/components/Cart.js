@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/cart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 
 const Cart = ({ cartItems, setCartItems }) => {
   const [modal, setModal] = useState(false);
+ 
+
+
 
   const toggleModal = () => {
     setModal(!modal);
@@ -73,6 +76,7 @@ const Cart = ({ cartItems, setCartItems }) => {
               <FontAwesomeIcon icon={faXmark} />
             </button>
             <h3>{sumPrice()}</h3>
+          
           </div>
         </div>
       )}

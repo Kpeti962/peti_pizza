@@ -14,16 +14,16 @@ const hamburgers = {
          price28: 1490,
          price32: 1890,
          size28: "Burger",
-         size32: "Menü",
+         size32: "Menu",
          id: uuidv4(),
        },
        {
-         name: "Sajtburger",
+         name: "Cheese burger",
          img: cheese,
          price28: 1890,
          price32: 2290,
          size28: "Burger",
-         size32: "Menü",
+         size32: "Menu",
          id: uuidv4(),
          
         
@@ -34,7 +34,7 @@ const hamburgers = {
          price28: 1790,
          price32: 2290,
          size28: "Burger",
-         size32: "Menü",
+         size32: "Menu",
          id: uuidv4(),
          
         
@@ -45,7 +45,7 @@ const hamburgers = {
          price28: 2090,
          price32: 2590,
          size28: "Burger",
-         size32: "Menü",
+         size32: "Menu",
          id: uuidv4(),
          
         
