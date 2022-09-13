@@ -31,7 +31,6 @@ const HamburgerPage = ({ cartItems, setCartItems, cart, setCart }) => {
     cartItems.forEach((item) => (sumResult += Number(item.price)));
     return sumResult;
   };
-
   return (
     <>
       <motion.div

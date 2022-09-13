@@ -64,14 +64,14 @@
   .menuNav li:first-child {
     margin-top: 2rem;
   }
-
-  ul {
-    flex-direction: column;
-    text-align: start;
-    background: none;
-    li {
-      color: white;
-      font-weight: 800;
+    
+    ul {
+      flex-direction: column;
+      text-align: start;
+      background: none;
+      li {
+       
+        font-weight: 800;
+      }
     }
-  }
 }

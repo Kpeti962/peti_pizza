@@ -3,12 +3,10 @@ import "../styles/cart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const Cart = ({ cartItems, setCartItems }) => {
+const Cart = ({ cartItems, setCartItems, localCart, setLocalCart }) => {
   const [modal, setModal] = useState(false);
- 
-
-
 
   const toggleModal = () => {
     setModal(!modal);
@@ -27,16 +25,14 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(filteredArray);
   };
 
-
-
   const sumPrice = () => {
     let sumResult = 0;
     cartItems.forEach((item) => (sumResult += Number(item.price)));
 
     if (sumResult === 0) {
-      return "A kosár üres";
+      return "The cart is empty";
     } else {
-      return `Összesen + Szállítási díj(300 Ft): ${sumResult + 300} Ft`;
+      return `Total: ${sumResult} Ft`;
     }
   };
 
@@ -45,9 +41,9 @@ const Cart = ({ cartItems, setCartItems }) => {
       <div className="btnModal">
         <h4>{cartItems.length}</h4>
         <motion.button
-         whileHover={{
+          whileHover={{
             scale: 1.1,
-            boxShadow: "0px 0px 5px #FF0000"
+            boxShadow: "0px 0px 5px #FF0000",
           }}
           onClick={toggleModal}
         >
@@ -66,17 +62,31 @@ const Cart = ({ cartItems, setCartItems }) => {
                     <div key={index} className="cartItems">
                       <li>{item.itemName}</li>
                       <button onClick={() => deleteHandler(item.id)}>
-                        Törlés
+                        Delete
                       </button>
                     </div>
                   );
                 })}
             </ul>
+            <h1></h1>
             <button className="closeModal" onClick={toggleModal}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
-            <h3>{sumPrice()}</h3>
-          
+            <div className="sumBtn">
+              <h3>{sumPrice()}</h3>
+
+              <Link to={"/ordering"}>
+                {cartItems.length > 0 && (
+                  <button
+                    onClick={() => {
+                      setModal(false);
+                    }}
+                  >
+                    Buy it
+                  </button>
+                )}
+              </Link>
+            </div>
           </div>
         </div>
       )}

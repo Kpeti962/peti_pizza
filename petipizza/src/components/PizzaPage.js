@@ -25,7 +25,6 @@ const PizzaPage = ({ cartItems, setCartItems, cart, setCart }) => {
       { itemName: newItem, id: uuidv4(), price: e.target.value },
     ]);
   };
-  
 
   const sumPrice = () => {
     let sumResult = 0;

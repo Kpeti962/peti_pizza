@@ -6,6 +6,7 @@ import "../styles/mainPage.scss";
 import axios from "axios";
 import wolt from "../img/wolt.png";
 import foodpanda from "../img/foodpanda.png";
+import AboutUs from "./AboutUs";
 
 const MainPage = () => {
   const [weather, setWeather] = useState(null);
@@ -22,34 +23,35 @@ const MainPage = () => {
   }, []);
 
   return (
-    <motion.div
-      className="mainPageWrapper"
-      exit="exit"
-      variants={pageAnim}
-      initial="hidden"
-      animate="show"
-    >
-      <div className="imgWrapper">
-        {weather && (
-          <div className="weatherWrapper">
-            <h4>{weather.location.name}</h4>
-            <h4>{weather.current.temp_c} °C</h4>
-            <img src={weather.current.condition.icon} alt="" />
+    <>
+      <motion.div
+        className="mainPageWrapper"
+        exit="exit"
+        variants={pageAnim}
+        initial="hidden"
+        animate="show"
+      >
+        <div className="imgWrapper">
+          {weather && (
+            <div className="weatherWrapper">
+              <h4>{weather.location.name}</h4>
+              <h4>{weather.current.temp_c} °C</h4>
+              <img src={weather.current.condition.icon} alt="" />
+            </div>
+          )}
+          <img src={terrace} alt="terrace" />
+          <div className="descriptionWrapper">
+            <h3>Place of new actions (under construction)</h3>
           </div>
-        )}
-        <img src={terrace} alt="terrace" />
-        <div className="descriptionWrapper">
-          <h3>
-            Place of new actions (under construction)
-          </h3>
         </div>
-      </div>
-      <div className="foodpandaAndWoltSection">
-        <img src={foodpanda} alt="" />
-        <h2>Choose home delivery</h2>
-        <img src={wolt} alt="" />
-      </div>
-    </motion.div>
+        <div className="foodpandaAndWoltSection">
+          <img src={foodpanda} alt="" />
+          <h2>Choose home delivery</h2>
+          <img src={wolt} alt="" />
+        </div>
+      </motion.div>
+      <AboutUs />
+    </>
   );
 };
 

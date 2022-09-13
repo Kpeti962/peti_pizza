@@ -24,6 +24,7 @@ body.active-modal {
   left: 92%;
 }
 
+
 .modal {
   z-index: 10;
 }
@@ -54,8 +55,21 @@ body.active-modal {
   min-width: 300px;
   border-radius: 30px;
 
-  h3 {
+
+.sumBtn {
     text-align: center;
+    button{
+      width: 80px;
+      height: 30px;
+      color: white;
+      background-color: rgb(252, 111, 111);
+      border: none;
+      cursor: pointer;
+      &:hover{
+        background-color:rgb(250, 74, 74) ;
+        transition: ease-in-out .5s;
+      }
+    }
   }
   ul {
     overflow-y: scroll;
@@ -99,4 +113,5 @@ body.active-modal {
     width: 30px;
     padding: 10px;
   }
+ 
 }

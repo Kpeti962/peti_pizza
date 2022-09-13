@@ -1,0 +1,26 @@
+
+.submitBtn{
+        display: flex;
+        justify-content: center;
+    }
+
+.orderingForm{
+    display: flex;
+  flex-direction: column;
+    align-items: center;
+    button{
+        width: 80px;
+        height: 30px;
+        color: white;
+        background-color: rgb(252, 111, 111);
+        border: none;
+        cursor: pointer;
+        &:hover{
+          background-color:rgb(250, 74, 74) ;
+          transition: ease-in-out .5s;
+        }
+    }
+}
+.addresSection{
+    margin-bottom: 70px;
+}
