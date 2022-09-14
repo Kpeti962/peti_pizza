@@ -18,7 +18,8 @@ const OrderingPage = ({ cartItems }) => {
 
   const sendOrder = (e) => {
     e.preventDefault();
-
+    alert("The order is temporarily unavailable")
+/* 
     emailjs
       .sendForm(
         "service_ltrww8g",
@@ -34,7 +35,7 @@ const OrderingPage = ({ cartItems }) => {
           console.log(error.text);
         }
       );
-    e.target.reset();
+    e.target.reset(); */
   };
 
   return (
